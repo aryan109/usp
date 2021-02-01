@@ -1,15 +1,13 @@
-#include<iostream.h>
 #include<stdio.h>
 #include<unistd.h>
 int main(int argc, char* argv)
 {
-if(argc!=3)
+if(link('t1.txt','t.txt')==-1)
 {
-cerr<<”usage:”<<argv[0]<<”<src_file><destfile>\n”; return 0;
+printf("link error"); return 1;
 }
-if(link(argv[1],argv[2])==-1)
-{
-perror(“link”); return 1;
+else{
+    printf('Link created\n');
 }
 return 0;
 }
